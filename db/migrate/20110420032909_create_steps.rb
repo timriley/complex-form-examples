@@ -1,7 +1,7 @@
 class CreateSteps < ActiveRecord::Migration
   def self.up
     create_table :steps do |t|
-      t.integer :assignemnt_id
+      t.integer :assignment_id
       t.string :name
 
       t.timestamps

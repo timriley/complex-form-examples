@@ -54,3 +54,11 @@ div.field, div.actions {
   font-size: 12px;
   list-style: square;
 }
+
+.fields {
+  margin: 8px 0;
+}
+
+.children_fields {
+  margin-left: 40px;
+}

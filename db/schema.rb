@@ -39,7 +39,7 @@ ActiveRecord::Schema.define(:version => 20110420114531) do
   end
 
   create_table "steps", :force => true do |t|
-    t.integer  "assignemnt_id"
+    t.integer  "assignment_id"
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
