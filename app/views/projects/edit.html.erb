@@ -1,8 +1,6 @@
-<% title "Edit Project" %>
+<h1>Editing project</h1>
 
-<%= render :partial => 'form' %>
+<%= render 'form' %>
 
-<p>
-  <%= link_to "Show", @project %> |
-  <%= link_to "View All", projects_path %>
-</p>
+<%= link_to 'Show', @project %> |
+<%= link_to 'Back', projects_path %>

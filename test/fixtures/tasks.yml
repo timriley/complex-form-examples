@@ -1,9 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
 one:
-  project_id: 1
+  proejct_id: 1
   name: MyString
-  due_at: 2008-07-18 13:59:08
+  due_at: 2011-04-19 23:28:27
 
 two:
-  project_id: 1
+  proejct_id: 1
   name: MyString
-  due_at: 2008-07-18 13:59:08
+  due_at: 2011-04-19 23:28:27
