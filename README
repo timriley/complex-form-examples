@@ -5,7 +5,7 @@ It adds an example to allow you to manage many-to-many relationships with a JQue
 SETUP
 
   git clone git://github.com/bbuchalter/complex-form-examples.git
-  cd complex_form_examples
+  cd complex_-form-examples
   git checkout -b unobtrusive-jquery-deep-rails3 origin/unobtrusive-jquery-deep-rails3  #switch branches
   gem install bundler #only if you're using RVM
   bundle install
