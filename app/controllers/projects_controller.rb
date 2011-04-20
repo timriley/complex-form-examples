@@ -57,6 +57,7 @@ class ProjectsController < ApplicationController
   # PUT /projects/1.xml
   def update
     @project = Project.find(params[:id])
+    @project.categories.clear  #must add this to make it possible to remove all associations from categories
 
     respond_to do |format|
       if @project.update_attributes(params[:project])

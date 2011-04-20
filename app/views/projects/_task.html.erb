@@ -1,4 +1,5 @@
-<div class="fields">
+<%#Add the display none if the object is set to be destroyed so it doesn't reappear during error message pages%>
+<div class="fields" style="<%="display:none" if f.object._destroy%>">
   <div class="field">
     <%=f.label :name, "Task"%>
     <%=f.text_field :name%>

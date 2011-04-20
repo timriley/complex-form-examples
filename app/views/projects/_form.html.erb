@@ -1,3 +1,4 @@
+<%require "ap"%>
 <%= form_for(@project) do |f| %>
   <% if @project.errors.any? %>
     <div id="error_explanation">
@@ -16,6 +17,21 @@
     <%= f.text_field :name %>
   </div>
   <div class="field">
+    <%= f.label "Project Categories"%><br/>
+    <%=select_tag "project[category_ids][]",
+                  options_for_select(Category.all.collect{|c| [c.name,c.id]}, @project.categories.collect {|c| c.id}),
+                  {:multiple => true, :class => "multiselect", :style => "width: 450px;height:250px;"} %>
+
+    <%= f.fields_for(:categories) do |category_form|%>
+        <%#This allows only new created categories be shown on errors because once saved it displays in the multi-select%>
+        <%render "category", :f => category_form if category_form.object.new_record?%>
+     <%end%>
+
+    <p><%= add_child_link "Add New Category", :categories %></p>
+    <%= new_child_fields_template(f, :categories)%>
+
+  </div>
+  <div class="field">
     <%= f.fields_for(:tasks) do |task_form|%>
         <%=render "task", :f => task_form %>
      <%end%>
@@ -27,4 +43,15 @@
   </div>
 <% end %>
 
+<%=content_for "categories_fields_template"%>
 <%=content_for "tasks_fields_template"%>
+
+
+<script>
+  $(function(){
+    $("#project_category_ids_").multiselect();
+  });
+</script>
+
+
+<%=ap params%>

@@ -10,11 +10,24 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110420032909) do
+ActiveRecord::Schema.define(:version => 20110420114531) do
 
   create_table "assignments", :force => true do |t|
     t.integer  "task_id"
     t.string   "owner"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "categories", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "categories_projects", :force => true do |t|
+    t.integer  "project_id"
+    t.integer  "category_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

@@ -1,4 +1,8 @@
 ComplexFormExamples::Application.routes.draw do
+  resources :categories_projects
+
+  resources :categories
+
   resources :steps
 
   resources :assignments
