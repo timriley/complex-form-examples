@@ -1,7 +1,6 @@
+<%#You must wrap content in the fields div - the javascript which assigns the context of the nested attributes work depends on it!%>
 <div class="fields">
-  <div class="field">
     <%=f.label :name, "Category"%>
     <%=f.text_field :name%>
     <%= remove_child_link("remove", f)%>
-  </div>
 </div>

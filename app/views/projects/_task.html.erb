@@ -1,10 +1,8 @@
-<%#Add the display none if the object is set to be destroyed so it doesn't reappear during error message pages%>
-<div class="fields" style="<%="display:none" if f.object._destroy%>">
-  <div class="field">
+<%#You must wrap content in the fields div - the javascript which assigns the context of the nested attributes work depends on it!%>
+<div class="fields">
     <%=f.label :name, "Task"%>
     <%=f.text_field :name%>
     <%= remove_child_link("remove", f)%>
-  </div>
   <div class="children_fields">
     <%= f.fields_for :assignments do |assignment_form| %>
       <%=render 'assignment', :f => assignment_form%>

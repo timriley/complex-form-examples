@@ -42,7 +42,7 @@ $(function() {
     if(hidden_field) {
       hidden_field.value = '1';
     }
-    $(this).parent().parent('.fields').hide();
+    $(this).parent('.fields').hide();
     return false;
   });
 });

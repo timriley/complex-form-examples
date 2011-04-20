@@ -1,9 +1,8 @@
+<%#You must wrap content in the fields div - the javascript which assigns the context of the nested attributes work depends on it!%>
 <div class="fields">
-  <div class="field">
-    <%= f.label :owner %>
-    <%= f.text_field :owner %>
-    <%= remove_child_link "remove", f %>
-  </div>
+  <%= f.label :owner %>
+  <%= f.text_field :owner %>
+  <%= remove_child_link "remove", f %>
   <div class="children_fields">
     <%= f.fields_for :steps do |step_form| %>
         <%= render 'step', :f => step_form %>
