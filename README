@@ -3,14 +3,16 @@ This solution uses the accepts_nested_attributes_for which was introduced in Rai
 It adds an example to allow you to manage many-to-many relationships with a JQuery multi-select with search and the ability to add new values.
 
 SETUP
-<code>
+
   git clone git://github.com/bbuchalter/complex-form-examples.git
-  git checkout -b unobtrusive-jquery-deep-rails3 orgin/unobtrusive-jquery-deep-rails3  #switch branches
+  cd complex_form_examples
+  git checkout -b unobtrusive-jquery-deep-rails3 origin/unobtrusive-jquery-deep-rails3  #switch branches
   gem install bundler #only if you're using RVM
+  bundle install
   rake db:migrate
   rake db:seed
   rails server
-</code>
+
 
 
 Special thanks to Tim Riley and Eloy Duran.
