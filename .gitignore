@@ -1,3 +1,6 @@
-log/*
-tmp/*
-*.sqlite3
+.bundle
+db/*.sqlite3
+log/*.log
+tmp/
+.idea/*
+*.ids

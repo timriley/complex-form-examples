@@ -1,4 +1,4 @@
-<% title "Project" %>
+<p id="notice"><%= notice %></p>
 
 <p>
   <strong>Name:</strong>
@@ -9,7 +9,23 @@
 
 <ul>
   <% for task in @project.tasks %>
-    <li><%=h task.name %></li>
+    <li>
+      <%=h task.name %>
+      <ul>
+        <% for assignment in task.assignments %>
+          <li>
+            <%=h assignment.owner %>
+            <ul>
+              <% for step in assignment.steps %>
+                <li>
+                  <%=h step.name %>
+                </li>
+              <% end %>
+            </ul>
+          </li>
+        <% end %>
+      </ul>
+    </li>
   <% end %>
 </ul>
 

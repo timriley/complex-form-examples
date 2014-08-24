@@ -1,8 +1,13 @@
+<%#You must wrap content in the fields div - the javascript which assigns the context of the nested attributes work depends on it!%>
 <div class="fields">
-  <%= f.label :name, "Task" %>
-  <%= f.text_field :name %>
-  <%= remove_child_link "remove", f %>
-  <%# Alternatively you can use a check box: %>
-  <%# f.check_box :_delete %>
-  <%# f.label :_delete, "(remove)" %>
+    <%=f.label :name, "Task"%>
+    <%=f.text_field :name%>
+    <%= remove_child_link("remove", f)%>
+  <div class="children_fields">
+    <%= f.fields_for :assignments do |assignment_form| %>
+      <%=render 'assignment', :f => assignment_form%>
+    <%end%>
+    <p><%= add_child_link "New Assignment", :assignments %></p>
+    <%= new_child_fields_template(f, :assignments)%>
+  </div>
 </div>
